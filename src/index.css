@@ -1,0 +1,12 @@
+/* src/index.css */
+@import "tailwindcss";
+
+/* 1. 큰 제목 스타일 정의 */
+.title-large {
+    @apply text-2xl md:text-3xl font-bold mt-2 leading-tight;
+}
+
+/* 2. 본문 설명글 스타일 정의 */
+.text-body {
+    @apply text-zinc-400 text-sm md:text-base mt-4 md:mt-0;
+}
