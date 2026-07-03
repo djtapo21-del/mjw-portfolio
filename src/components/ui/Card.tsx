@@ -1,14 +1,15 @@
-// src/components/Card.tsx
-import React from 'react' // 1. React 자체를 직접 불러옵니다.
+// src/components/ui/Card.tsx
+import React from 'react'
 
 interface CardProps {
-    children: React.ReactNode  // 2. React.ReactNode 형식으로 지정합니다.
+    children: React.ReactNode
     className?: string
 }
 
 function Card({ children, className = '' }: CardProps) {
     return (
-        <div className={`bg-zinc-900/50 min-h-[16rem] md:h-64 rounded-3xl p-6 text-white border border-white/10 ${className}`}>
+        /* 고정 높이(md:h-64)를 지우고 h-full을 주어 유연하게 늘어나도록 수정했습니다 */
+        <div className={`bg-card-bg rounded-card p-6 text-white border border-card-border h-full ${className}`}>
             {children}
         </div>
     )

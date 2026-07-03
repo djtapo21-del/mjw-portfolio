@@ -8,18 +8,15 @@ interface TextProps {
 }
 
 function Text({ variant, children, className = '' }: TextProps) {
-  // variant에 따라 시맨틱(Semantic)한 HTML 태그를 선택하여 렌더링합니다.
   if (variant === 'title-large') {
     return (
-      <h2 className={`text-2xl md:text-3xl font-bold mt-2 leading-tight text-white ${className}`}>
+      <h2 className={`text-2xl md:text-3xl font-bold leading-tight text-text-title ${className}`}>
         {children}
       </h2>
     )
   }
-
-  // 기본적으로 'text-body'일 때는 본문용 <p> 태그를 사용합니다.
   return (
-    <p className={`text-zinc-400 text-sm md:text-base mt-4 md:mt-0 ${className}`}>
+    <p className={`text-text-body text-sm md:text-base ${className}`}>
       {children}
     </p>
   )
