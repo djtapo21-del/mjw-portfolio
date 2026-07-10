@@ -12,7 +12,8 @@
 @theme {
     --font-sans: "Pretendard Variable", -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
 
-    --color-page-bg: #09090b;
+    /* 배경 명도를 살짝 올려 더 세련된 깊이감 제공 */
+    --color-page-bg: #121214;
     --color-surface: rgba(255, 255, 255, 0.04);
     --color-card-border: rgba(255, 255, 255, 0.08);
 

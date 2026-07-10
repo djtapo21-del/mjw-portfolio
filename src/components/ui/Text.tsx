@@ -1,3 +1,4 @@
+// src/components/ui/Text.tsx
 import { cn } from '../../lib/utils';
 
 export function Hero({ className, children }: { className?: string; children: React.ReactNode }) {
@@ -5,7 +6,7 @@ export function Hero({ className, children }: { className?: string; children: Re
 }
 
 export function Title({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <h2 className={cn("text-xl md:text-2xl font-semibold text-text-main tracking-tight leading-tight", className)}>{children}</h2>;
+  return <h2 className={cn("text-xl font-semibold text-text-main tracking-tight leading-tight", className)}>{children}</h2>;
 }
 
 export function SubTitle({ className, children }: { className?: string; children: React.ReactNode }) {
@@ -17,7 +18,7 @@ export function Body({ className, children }: { className?: string; children: Re
 }
 
 export function Label({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <span className={cn("text-xs font-bold uppercase text-text-muted tracking-widest leading-none", className)}>{children}</span>;
+  return <span className={cn("text-xs font-medium uppercase text-text-muted tracking-normal leading-none", className)}>{children}</span>;
 }
 
 export function Caption({ className, children }: { className?: string; children: React.ReactNode }) {
