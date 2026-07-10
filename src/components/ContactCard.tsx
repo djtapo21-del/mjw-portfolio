@@ -27,7 +27,7 @@ export default function ContactCard() {
           <div className="flex flex-col gap-y-3.5">
             <div className="flex flex-col gap-y-0.5">
               <Label>Birth</Label>
-              <SubTitle>1999. 05. 20</SubTitle>
+              <SubTitle>1997. 03. 21</SubTitle>
             </div>
             <div className="flex flex-col gap-y-0.5">
               <Label>Location</Label>
@@ -35,7 +35,7 @@ export default function ContactCard() {
             </div>
             <div className="flex flex-col gap-y-0.5">
               <Label>Military</Label>
-              <SubTitle>군필 (공군 병장 만기전역)</SubTitle>
+              <SubTitle>공군 병장 만기전역</SubTitle>
             </div>
             <div className="flex flex-col gap-y-0.5">
               <Label>Education</Label>
