@@ -10,7 +10,7 @@ export default function ContactCard() {
       {/* 1. 상단 메인 인사말 */}
       <div className="flex flex-col gap-3 pb-4 border-b border-white/[0.06]">
         <h1 className="text-2xl md:text-3xl font-semibold text-white tracking-wide leading-tight">
-          바퀴를 다시 만들지 않는 <br />
+          AI 시대에 발맞춘 디자이너 <br />
           <span className="text-brand-high">문정우</span>입니다. 🚀
         </h1>
         <Body>
