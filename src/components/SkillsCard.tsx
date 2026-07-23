@@ -4,7 +4,6 @@ import { Title, Label, Status, Caption } from './ui/Text'
 import { Tag } from './ui/Tag'
 
 export default function SkillsCard() {
-    const mobileDivider = <div className="h-px bg-white/5 md:hidden w-full" />;
 
     return (
         <Card span={3} className="text-left gap-6">
@@ -29,7 +28,7 @@ export default function SkillsCard() {
                     </div>
                 </Card>
 
-                {mobileDivider}
+                <div className="h-px bg-white/5 md:hidden w-full" />
 
                 {/* 미디어 & UI 타일 */}
                 <Card variant="tile" className="gap-4">
@@ -46,7 +45,7 @@ export default function SkillsCard() {
                     </div>
                 </Card>
 
-                {mobileDivider}
+                <div className="h-px bg-white/5 md:hidden w-full" />
 
                 {/* 웹 기초 타일 */}
                 <Card variant="tile" className="gap-4">

@@ -1,10 +1,6 @@
 // src/components/ui/Text.tsx
 import { cn } from '../../lib/utils';
 
-export function Hero({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <h1 className={cn("text-2xl md:text-3xl font-semibold text-text-main tracking-tight leading-tight", className)}>{children}</h1>;
-}
-
 export function Title({ className, children }: { className?: string; children: React.ReactNode }) {
   return <h2 className={cn("text-xl font-semibold text-text-main tracking-tight leading-tight", className)}>{children}</h2>;
 }
@@ -29,6 +25,3 @@ export function Status({ className, children }: { className?: string; children: 
   return <span className={cn("text-xs font-semibold uppercase text-brand-high tracking-wider leading-none", className)}>{children}</span>;
 }
 
-export function Interactive({ className, children }: { className?: string; children: React.ReactNode }) {
-  return <span className={cn("text-sm font-medium text-text-body group-hover:text-white", className)}>{children}</span>;
-}

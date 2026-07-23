@@ -1,19 +1,23 @@
 // src/components/ContactCard.tsx
 import { useState } from 'react'
+import { createPortal } from 'react-dom'
 import { Card } from './ui/Card'
 import { Title, Body, SubTitle, Label, Caption } from './ui/Text'
 
 export default function ContactCard() {
   const [resumeOpen, setResumeOpen] = useState(false)
-  const mobileDivider = <div className="h-px bg-white/5 md:hidden w-full my-6" />;
+
+  // 💡 모바일 구분선에 my-5 (위아래 20px 마진) 추가하여 간격 확보
+  const mobileDivider = <div className="h-px bg-white/5 md:hidden w-full my-5" />
 
   return (
     <Card span={2}>
+      {/* 1. 헤더 영역 */}
       <div className="flex flex-col gap-1.5 pb-4 border-b border-white/[0.06]">
-        <Title className="text-2xl md:text-3xl">
+        <h1 className="text-2xl md:text-3xl font-semibold text-text-main tracking-tight leading-tight">
           AI 시대에 발맞춘<br />
           <span className="text-brand-high">디자이너 문정우</span>입니다.
-        </Title>
+        </h1>
         <button
           onClick={() => setResumeOpen(true)}
           className="mt-2 w-full md:w-fit text-sm font-bold text-brand-high bg-brand-high/10 border border-brand-high/20 rounded-lg px-5 py-2.5 hover:bg-brand-high/20 hover:text-white cursor-pointer"
@@ -22,7 +26,7 @@ export default function ContactCard() {
         </button>
       </div>
 
-      {/* 2. 하단 리스트 그리드 (모바일에서는 gap을 0으로 만들어 모듈 분리감을 없앰) */}
+      {/* 2. 하단 리스트 그리드 */}
       <div className="flex flex-col md:grid md:grid-cols-2 gap-0 md:gap-4 mt-auto">
 
         {/* 인적 사항 타일 */}
@@ -83,7 +87,7 @@ export default function ContactCard() {
 
           {/* 연락처 타일 */}
           <Card variant="tile">
-            <div className="flex flex-col gap-3 pb-4 md:pb-0">
+            <div className="flex flex-col gap-3 pb-2 md:pb-0">
               <Label>Contact Channel</Label>
               <div className="flex flex-col gap-y-3.5 pt-1.5">
                 <div className="flex items-center gap-x-3 text-text-body">
@@ -101,21 +105,17 @@ export default function ContactCard() {
 
       </div>
 
-      {/* ── 자기소개서 뷰어 ── */}
-      {resumeOpen && (
+      {/* ── 자기소개서 뷰어 (Portal) ── */}
+      {resumeOpen && createPortal(
         <div
           className="fixed inset-0 z-50"
           onClick={() => setResumeOpen(false)}
         >
-          {/* 배경 (어두운 오버레이) */}
           <div className="absolute inset-0 bg-black/70" />
-
-          {/* 흰색 모달 */}
           <div
             className="absolute inset-0 md:inset-8 max-w-3xl md:mx-auto flex flex-col bg-white rounded-none md:rounded-2xl shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
-            {/* 헤더 */}
             <div className="flex items-center justify-between px-6 py-4 border-b border-gray-200 shrink-0">
               <h2 className="text-base md:text-lg font-semibold text-gray-900 tracking-wide">
                 자기소개서
@@ -127,8 +127,6 @@ export default function ContactCard() {
                 ✕
               </button>
             </div>
-
-            {/* 콘텐츠 */}
             <div className="flex-1 overflow-y-auto overscroll-contain px-6 md:px-8 py-6 space-y-5">
               <div className="space-y-4 text-gray-800 text-sm md:text-base leading-relaxed">
                 <p>
@@ -156,7 +154,7 @@ export default function ContactCard() {
             </div>
           </div>
         </div>
-      )}
+        , document.getElementById('modal-root')!)}
     </Card>
   )
 }

@@ -2,28 +2,7 @@
 // 📖 웹툰형 상세 뷰어 — 썸네일 클릭 시 오버레이로 열림
 import { useEffect, useRef, useState, useCallback } from 'react'
 import { cn } from '../lib/utils'
-
-// ── 이미지 폴백 ──
-function ViewerImage({ src, alt }: { src: string; alt: string }) {
-    const [error, setError] = useState(false)
-
-    if (error) {
-        return (
-            <div className="w-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 flex items-center justify-center aspect-[16/9]">
-                <span className="text-sm text-white/30 font-mono">{src}</span>
-            </div>
-        )
-    }
-
-    return (
-        <img
-            src={src}
-            alt={alt}
-            className="w-full"
-            onError={() => setError(true)}
-        />
-    )
-}
+import FallbackImage from './ui/FallbackImage'
 
 // ── 타입 정의 ──
 export interface ContentItem {
@@ -126,7 +105,7 @@ export default function DetailViewer({ open, onClose, content }: DetailViewerPro
                 >
                     {content.items.map((item, idx) => (
                         <div key={idx} className="flex flex-col items-center">
-                            <ViewerImage src={item.image} alt={item.title || content.title} />
+                            <FallbackImage src={item.image} alt={item.title || content.title} className="w-full" />
                         </div>
                     ))}
                 </div>

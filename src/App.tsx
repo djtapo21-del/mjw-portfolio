@@ -20,7 +20,7 @@ export default function App() {
 
       <footer className="mt-auto">
         <Label className="text-zinc-700 normal-case tracking-normal">
-          © 2026 Designed & Built by Hong Gil Dong
+          © 2026 Designed & Built by Moon Jung Woo
         </Label>
       </footer>
     </div>

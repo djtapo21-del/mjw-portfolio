@@ -7,29 +7,8 @@
 import { useState } from 'react'
 import { Card } from './ui/Card'
 import { Title, Body } from './ui/Text'
+import FallbackImage from './ui/FallbackImage'
 import DetailViewer, { type DetailContent } from './DetailViewer'
-
-// ── 썸네일 이미지 (폴백 포함) ──
-function ThumbImage({ src, alt }: { src: string; alt: string }) {
-    const [error, setError] = useState(false)
-
-    if (error) {
-        return (
-            <div className="w-full h-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 border border-white/[0.06] flex items-center justify-center">
-                <span className="text-sm text-white/30 font-mono">{src}</span>
-            </div>
-        )
-    }
-
-    return (
-        <img
-            src={src}
-            alt={alt}
-            className="w-full h-full object-cover rounded-xl"
-            onError={() => setError(true)}
-        />
-    )
-}
 
 // ── 데이터 (여기만 수정하세요) ──
 // 각 항목의 items 배열에 (제목+설명+이미지)를 순서대로 나열하세요.
@@ -138,7 +117,7 @@ const contentData: DetailContent[] = [
         description: "큐랑 브랜드 룩북 디자인",
         thumbnail: "/design/qrang-lookbook/t.webp",
         items: [
-            { image: "/design/qrang-lookbook/1.webp" },
+            { image: "/design/qrang-lookbook/1.jpg" },
         ],
     },
     {
@@ -204,7 +183,7 @@ export default function DetailCard() {
                             >
                                 {/* 썸네일 이미지 */}
                                 <div className="relative w-full aspect-video shrink-0 overflow-hidden rounded-xl border border-white/[0.06]">
-                                    <ThumbImage src={content.thumbnail} alt={content.title} />
+                                    <FallbackImage src={content.thumbnail} alt={content.title} className="w-full h-full rounded-xl" />
                                 </div>
 
                                 {/* 텍스트 정보 */}

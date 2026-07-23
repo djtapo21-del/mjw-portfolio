@@ -3,7 +3,6 @@ import { Card } from './ui/Card'
 import { Title, SubTitle, Body, Caption } from './ui/Text'
 
 export default function AboutCard() {
-    const mobileDivider = <div className="h-px bg-white/5 md:hidden w-full" />;
 
     return (
         <Card span={1} gap="medium">
@@ -25,7 +24,7 @@ export default function AboutCard() {
                     <Body className="text-xs">시각디자인 | 3년 4개월</Body>
                 </Card>
 
-                {mobileDivider}
+                <div className="h-px bg-white/5 md:hidden w-full" />
 
                 {/* 이력 2 */}
                 <Card variant="tile" className="gap-1.5">
@@ -36,7 +35,7 @@ export default function AboutCard() {
                     <Body className="text-xs">주문관리 | 1년 3개월</Body>
                 </Card>
 
-                {mobileDivider}
+                <div className="h-px bg-white/5 md:hidden w-full" />
 
                 {/* 이력 3 */}
                 <Card variant="tile" className="gap-1.5">
@@ -47,7 +46,7 @@ export default function AboutCard() {
                     <Body className="text-xs">창고관리 | 3개월</Body>
                 </Card>
 
-                {mobileDivider}
+                <div className="h-px bg-white/5 md:hidden w-full" />
 
                 {/* 이력 4 */}
                 <Card variant="tile" className="gap-1.5">

@@ -7,7 +7,7 @@ export function Tag({
   className
 }: {
   children: string,
-  color?: 'blue' | 'yellow' | 'sky' | 'green' | 'purple' | 'zinc',
+  color?: 'blue' | 'yellow' | 'sky' | 'green' | 'purple' | 'pink' | 'zinc',
   className?: string
 }) {
   const styles = {
@@ -16,6 +16,7 @@ export function Tag({
     sky: 'bg-tag-sky/10 text-tag-sky border-tag-sky/20',
     green: 'bg-tag-green/10 text-tag-green border-tag-green/20',
     purple: 'bg-tag-purple/10 text-tag-purple border-tag-purple/20',
+    pink: 'bg-tag-pink/10 text-tag-pink border-tag-pink/20',
     zinc: 'bg-zinc-800 text-zinc-300 border-zinc-700'
   };
 
